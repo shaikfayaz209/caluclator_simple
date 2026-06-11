@@ -1,0 +1,136 @@
+```SIMPLE CALUCLATOR
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Web Page</title>
+
+    <style>
+
+        body{
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator{
+            width: 350px;
+            margin: 100px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px gray;
+            text-align: center;
+        }
+
+        h1{
+            color: darkblue;
+            margin-bottom: 20px;
+        }
+
+        input, select{
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 1px solid gray;
+        }
+
+        button{
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: darkblue;
+        }
+
+        h2{
+            margin-top: 20px;
+            color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h1>Simple Calculator</h1>
+
+        <input type="number" id="num1" placeholder="Enter First Number">
+
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+            <option value="//">//</option>
+            <option value="**">**</option>
+        </select>
+
+        <input type="number" id="num2" placeholder="Enter Second Number">
+
+        <br><br>
+
+        <button onclick="calculate()">Calculate</button>
+
+        <h2 id="result">Output = </h2>
+
+    </div>
+
+    <script>
+
+        function calculate(){
+
+            let a = Number(document.getElementById("num1").value);
+            let b = document.getElementById("operator").value;
+            let c = Number(document.getElementById("num2").value);
+
+            let output;
+
+            if(b == "+"){
+                output = a + c;
+            }
+
+            else if(b == "-"){
+                output = a - c;
+            }
+
+            else if(b == "*"){
+                output = a * c;
+            }
+
+            else if(b == "/"){
+                output = a / c;
+            }
+
+            else if(b == "%"){
+                output = a % c;
+            }
+
+            else if(b == "//"){
+                output = Math.floor(a / c);
+            }
+
+            else if(b == "**"){
+                output = a ** c;
+            }
+
+            document.getElementById("result").innerHTML =
+            "Output = " + output;
+        }
+
+    </script>
+
+</body>
+</html>
+```
